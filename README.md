@@ -26,3 +26,9 @@ compare them to actual flights.
 
 `dataset-stats` and `dataset-archive` require OCaml and Core
 (from `opam install core`).
+
+## Building
+
+`dataset-stats` and `dataset-archive` may be built using `corebuild`; you
+want to build `main.native` in `dataset-stats/` and `archive.native` &
+`unpack.native` in `dataset-archive/`.
