@@ -32,3 +32,15 @@ compare them to actual flights.
 `dataset-stats` and `dataset-archive` may be built using `corebuild`; you
 want to build `main.native` in `dataset-stats/` and `archive.native` &
 `unpack.native` in `dataset-archive/`.
+
+## Deploying
+
+OCaml’s `BigArray` doesn’t appear to be able to create read-only maps, and
+so in order to map a read-only dataset, we need to create a private map.
+Turns out the kernel is a bit unhappy about us asking for 18G of memory we
+might end up using. The ~~“solution”~~ hack is to turn overcommit up to
+infinity:
+
+`sudo sysctl vm.overcommit_memory=1`
+
+(and create /etc/sysctl.d/90-tawhiri-overcommit.conf).
