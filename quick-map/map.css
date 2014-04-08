@@ -1,0 +1,12 @@
+html, body {
+  height: 100%;
+}
+
+html, body, #map_canvas, #chart_container, #chart_canvas {
+  margin: 0;
+  padding: 0;
+}
+
+#map_canvas {
+  height: 100%;
+}

@@ -16,6 +16,11 @@ Copy wind data in a box that bounds the UK to and from dataset files. This is
 running via cron, and will be used to retrospectively run predictions and
 compare them to actual flights.
 
+### quick-map
+
+Small HTML & Coffee/Javascript page to show a trace (represented as a list of
+(lat, lon) tuples) on a map, for testing without a full UI.
+
 ## License
 
 `dataset-stats` and `dataset-archive` are Copyright 2014
