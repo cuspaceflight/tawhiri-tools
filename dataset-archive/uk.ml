@@ -1,3 +1,6 @@
+(* This is very similar to dataset.ml, but subtly different (float32, not 64),
+ * different filenames, shape. I don't think that there's sufficient repetition
+ * for the complexity of sharing bits of code to be worth it *)
 open Core.Std
 
 (* NB: float32 not 64! *)
