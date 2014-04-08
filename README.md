@@ -1,6 +1,6 @@
 # T&#257;whirim&#257;tea tools
 
-See also: https://github.com/cuspaceflight/tawhiri
+See also: [tawhiri](https://github.com/cuspaceflight/tawhiri) (main project).
 
 ## Included programs
 
