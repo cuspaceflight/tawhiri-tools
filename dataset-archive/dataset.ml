@@ -1,6 +1,6 @@
 open Core.Std
 
-type ds_arr = (float, Bigarray.float64_elt, Bigarray.c_layout) Bigarray.Genarray.t
+type ds_arr = (float, Bigarray.float32_elt, Bigarray.c_layout) Bigarray.Genarray.t
 
 type ro
 type rw
@@ -12,7 +12,7 @@ type 'a t = Time.t * ds_arr
 
 (* XXX this needs the system clock to be UTC *)
 (* XXX location hardcoded *)
-let filename dstime = Time.format dstime "/var/www/predict/tawhiri/datasets/%Y%m%d%H"
+let filename dstime = Time.format dstime "/srv/tawhiri-datasets/%Y%m%d%H"
 let shape = (65, 47, 3, 361, 720)
 let shape_arr = let a, b, c, d, e = shape in [|a;b;c;d;e|]
 
@@ -24,7 +24,7 @@ let create dstime mode =
         | RO -> ([Unix.O_RDONLY], false)
     in
     let arr = Unix.with_file (filename dstime) ~mode:unix_mode ~f:(fun fd ->
-        BA.Genarray.map_file fd BA.float64 BA.c_layout shared shape_arr
+        BA.Genarray.map_file fd BA.float32 BA.c_layout shared shape_arr
     ) in
     (dstime, arr)
 
