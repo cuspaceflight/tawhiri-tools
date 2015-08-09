@@ -33,4 +33,4 @@ let stddev s = sqrt (variance s)
 let string_list_row_headers = ["n"; "x"; "x2"; "min"; "max"; "maxmod"; "mean"; "variance"; "stddev"]
 let to_string_list s =
   let getters = [x; x2; min; max; maxmod; mean; variance; stddev] in
-  Int.to_string s.n :: List.map ~f:(fun g -> Float.to_string (g s)) getters
+  Int.to_string s.n :: List.map ~f:(fun g -> sprintf "%.3g" (g s)) getters
